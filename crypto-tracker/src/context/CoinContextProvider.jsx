@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import CoinContext from "./CoinContext";
+import { CoinContext } from "./CoinContext";
 
-const CoinContextProvider = (props) => {
+const CoinContextProvider = ({ children }) => {
   const [allCoin, setAllCoin] = useState([]);
   const [currency, setCurrency] = useState({
     name: "usd",
@@ -19,8 +19,8 @@ const CoinContextProvider = (props) => {
     try {
       const response = await fetch(url, options);
       const data = await response.json();
-      console.log(data);
       setAllCoin(data);
+      console.log(data);
     } catch (error) {
       console.error("Error fetching coins:", error);
     }
@@ -30,15 +30,9 @@ const CoinContextProvider = (props) => {
     fetchAllCoin();
   }, []);
 
-  const contextValue = {
-    allCoin,
-    currency,
-    setCurrency,
-  };
-
   return (
-    <CoinContext.Provider value={contextValue}>
-      {props.children}
+    <CoinContext.Provider value={{ allCoin, currency, setCurrency }}>
+      {children}
     </CoinContext.Provider>
   );
 };

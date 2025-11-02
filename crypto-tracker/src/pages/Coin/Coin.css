@@ -1,0 +1,15 @@
+.coin-page {
+  text-align: center;
+  padding: 2rem;
+}
+
+.coin-page h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.coin-page p {
+  font-size: 1.2rem;
+  color: #555;
+}
+

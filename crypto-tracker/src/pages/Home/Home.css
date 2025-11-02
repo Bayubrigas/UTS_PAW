@@ -71,3 +71,23 @@
 .market-cap{
   text-align: right;
 }
+
+.coin-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.coin-info img {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+
+.coin-info .symbol {
+  text-transform: uppercase;
+  color: gray;
+  font-size: 0.9rem;
+  margin-left: 4px;
+}
+
